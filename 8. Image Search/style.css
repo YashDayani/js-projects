@@ -67,6 +67,11 @@ form button{
     display: none;
 }
 
+.image-container{
+    display: flex;
+    flex-direction: column;
+}
+
 #search-result{
     width: 80%;
     margin: 100px auto 50px;
@@ -80,4 +85,26 @@ form button{
     height: 230px;
     object-fit: cover;
     border-radius: 5px;
+}
+a{
+    text-decoration: none;
+}
+
+.download-btn {
+    display: flex;
+    justify-content: center;
+    background: #ff3929;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 12px 48px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #e62d1e;
 }

@@ -24,14 +24,27 @@ async function searchImage() {
     console.log(data);
 
     results.map((result) => {
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("image-container");
+
         const image = document.createElement("img");
         image.src = result.urls.small;
+        
         const imageLink = document.createElement("a");
         imageLink.href = result.links.html;
         imageLink.target = "_blank";
+        
+        const downloadBtn = document.createElement("a");
+        downloadBtn.classList.add("download-btn");
+        downloadBtn.href = result.urls.full;
+        downloadBtn.download = `unsplash-${result.id}.jpg`;
+        downloadBtn.innerHTML = "Download";
+        downloadBtn.target = "_blank";
 
         imageLink.appendChild(image);
-        searchResult.appendChild(imageLink);
+        imageContainer.appendChild(imageLink);
+        imageContainer.appendChild(downloadBtn);
+        searchResult.appendChild(imageContainer);
     });
     showMoreBtn.style.display="block";
 }
